@@ -24,7 +24,7 @@ app.get('/v1/badge/:repoId', (req, res) => {
   console.log(`\n[${new Date().toISOString()}] 🖼️  Badge fetched for repo: "${repoId}"`)
   console.log(`   User-Agent: ${req.headers['user-agent']}`)
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 60" width="540" height="60" style="max-width:100%">
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 60" width="468" height="60" style="max-width:100%">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#0a0a0c"/>
@@ -37,8 +37,8 @@ app.get('/v1/badge/:repoId', (req, res) => {
   </defs>
 
   <!-- Background — inset 0.5px to avoid border clipping -->
-  <rect x="0.5" y="0.5" width="539" height="59" rx="7.5" fill="url(#bg)"/>
-  <rect x="0.5" y="0.5" width="539" height="59" rx="7.5" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="467" height="59" rx="7.5" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="467" height="59" rx="7.5" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
 
   <!-- Accent left bar -->
   <rect x="0" y="0" width="4" height="60" rx="3" fill="url(#accent)"/>
