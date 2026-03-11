@@ -24,7 +24,7 @@ app.get('/v1/badge/:repoId', (req, res) => {
   console.log(`\n[${new Date().toISOString()}] 🖼️  Badge fetched for repo: "${repoId}"`)
   console.log(`   User-Agent: ${req.headers['user-agent']}`)
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 60" width="468" height="60" style="max-width:100%">
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90" width="728" height="90" style="max-width:100%">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#0a0a0c"/>
@@ -36,27 +36,27 @@ app.get('/v1/badge/:repoId', (req, res) => {
     </linearGradient>
   </defs>
 
-  <!-- Background — inset 0.5px to avoid border clipping -->
-  <rect x="0.5" y="0.5" width="467" height="59" rx="7.5" fill="url(#bg)"/>
-  <rect x="0.5" y="0.5" width="467" height="59" rx="7.5" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <!-- Background -->
+  <rect x="0.5" y="0.5" width="727" height="89" rx="9.5" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="727" height="89" rx="9.5" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
 
   <!-- Accent left bar -->
-  <rect x="0" y="0" width="4" height="60" rx="3" fill="url(#accent)"/>
+  <rect x="0" y="0" width="5" height="90" rx="4" fill="url(#accent)"/>
 
   <!-- Sponsored label -->
-  <text x="20" y="22" font-family="Arial, sans-serif" font-size="9" font-weight="600"
-    fill="#a855f7" letter-spacing="1.5">♥ SPONSORED</text>
+  <text x="26" y="32" font-family="Arial, sans-serif" font-size="11" font-weight="700"
+    fill="#a855f7" letter-spacing="2">♥ SPONSORED</text>
 
   <!-- Brand name -->
-  <text x="20" y="42" font-family="Arial, sans-serif" font-size="15" font-weight="700"
+  <text x="26" y="62" font-family="Arial, sans-serif" font-size="22" font-weight="700"
     fill="#ffffff">${ad.sponsor}</text>
 
   <!-- Divider -->
-  <line x1="130" y1="15" x2="130" y2="45" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <line x1="180" y1="20" x2="180" y2="70" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
 
   <!-- Tagline -->
-  <text x="146" y="35" font-family="Arial, sans-serif" font-size="12"
-    fill="rgba(255,255,255,0.7)">${ad.tagline}</text>
+  <text x="200" y="51" font-family="Arial, sans-serif" font-size="16"
+    fill="rgba(255,255,255,0.75)">${ad.tagline}</text>
 </svg>`
 
   res.setHeader('Content-Type', 'image/svg+xml')
