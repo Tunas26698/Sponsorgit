@@ -1,7 +1,7 @@
 <p align="center">
   <sub>♥️ Sponsored via <a href="https://github.com/Tunas26698/Sponsorgit">SponsorGit</a></sub><br/>
-  <a href="https://tame-seals-camp.loca.lt/click/sponsorgit">
-    <img src="https://tame-seals-camp.loca.lt/v1/badge/sponsorgit" alt="Sponsored by PublicFail" width="540"/>
+  <a href="https://sold-anthony-edges-hardly.trycloudflare.com/click/sponsorgit">
+    <img src="https://sold-anthony-edges-hardly.trycloudflare.com/v1/badge/sponsorgit" alt="Sponsored by PublicFail" width="540"/>
   </a>
 </p>
 
