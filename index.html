@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SponsorGit | Monetize Open Source</title>
+    <!-- Fonts: Inter for that Lean Tech look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i data-lucide="github"></i>
+            <span>SponsorGit</span>
+        </div>
+        <div class="nav-links">
+            <a href="#publishers">For Maintainers</a>
+            <a href="#advertisers">For Advertisers</a>
+            <a href="#how-it-works">How it Works</a>
+            <a href="#pricing">Pricing</a>
+        </div>
+        <button class="btn btn-outline" onclick="focusWaitlist()">Join Waitlist</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-inner">
+            <!-- Left: Text & Form -->
+            <div class="hero-left">
+                <div class="hero-chip">🚀 Private Beta Registration Open</div>
+                <h1 class="hero-title">Monetize your <span style="white-space: nowrap;"><span
+                            style="color: #a855f7;">Github</span> Repo</span></h1>
+                <p class="hero-subtitle">The ponsorship network built specifically for GitHub READMEs. Turn your repository views into recurring revenue without compromising developer trust.</p>
+
+                <form class="waitlist-form" id="waitlist-form" onsubmit="event.preventDefault(); submitWaitlist();">
+                    <div class="waitlist-form-row">
+                        <select id="user-type" class="waitlist-select">
+                            <option value="maintainer">I'm a github owner</option>
+                            <option value="advertiser">I am an Advertiser</option>
+                        </select>
+                        <input type="email" id="email-input" placeholder="Enter your email" required class="waitlist-input">
+                    </div>
+                    <button type="submit" class="btn-cta" id="submit-btn">Get Early Access <i data-lucide="arrow-right" class="icon-sm"></i></button>
+                </form>
+                <p class="form-feedback" id="form-feedback"></p>
+            </div>
+
+            <!-- Right: Screenshot -->
+            <div class="hero-right">
+                <div class="hero-img-wrapper">
+                    <img src="hero-screenshot.png" alt="SponsorGit Preview" class="hero-screenshot">
+                    <div class="hero-img-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repo Showcase -->
+    <section id="advertisers" class="features">
+        <div class="section-header">
+            <h2>Reach the <span class="gradient-accent">Developer Audience</span></h2>
+            <p>Sponsor and get your product in front of developers on the most trusted, high-traffic repositories on GitHub.</p>
+        </div>
+
+        <div class="repo-grid">
+            <!-- Repo 1 -->
+            <div class="repo-card glass">
+                <div class="repo-card-header">
+                    <img src="https://github.com/shadcn.png?size=40" class="repo-avatar" alt="shadcn">
+                    <div class="repo-meta">
+                        <span class="repo-owner">shadcn</span>
+                        <span class="repo-name">ui</span>
+                    </div>
+                    <span class="repo-slot-badge">Slot open</span>
+                </div>
+                <p class="repo-desc">Beautifully designed components that you can copy and paste into your apps.</p>
+                <div class="repo-stats">
+                    <span class="repo-lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+                    <span class="repo-stars"><i data-lucide="star" class="icon-xs"></i> 78.2k</span>
+                </div>
+            </div>
+
+            <!-- Repo 2 -->
+            <div class="repo-card glass">
+                <div class="repo-card-header">
+                    <img src="https://github.com/kamranahmedse.png?size=40" class="repo-avatar" alt="kamranahmedse">
+                    <div class="repo-meta">
+                        <span class="repo-owner">kamranahmedse</span>
+                        <span class="repo-name">developer-roadmap</span>
+                    </div>
+                    <span class="repo-slot-badge">Slot open</span>
+                </div>
+                <p class="repo-desc">Interactive roadmaps, guides and other educational content to help developers grow.</p>
+                <div class="repo-stats">
+                    <span class="repo-lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span>
+                    <span class="repo-stars"><i data-lucide="star" class="icon-xs"></i> 294k</span>
+                </div>
+            </div>
+
+            <!-- Repo 3 -->
+            <div class="repo-card glass">
+                <div class="repo-card-header">
+                    <img src="https://github.com/nicehash.png?size=40" class="repo-avatar" alt="nicehash">
+                    <div class="repo-meta">
+                        <span class="repo-owner">practical-tutorials</span>
+                        <span class="repo-name">project-based-learning</span>
+                    </div>
+                    <span class="repo-slot-badge">Slot open</span>
+                </div>
+                <p class="repo-desc">Curated list of project-based tutorials — learn by building real apps.</p>
+                <div class="repo-stats">
+                    <span class="repo-lang"><span class="lang-dot" style="background:#555"></span>—</span>
+                    <span class="repo-stars"><i data-lucide="star" class="icon-xs"></i> 201k</span>
+                </div>
+            </div>
+
+            <!-- Repo 4 -->
+            <div class="repo-card glass">
+                <div class="repo-card-header">
+                    <img src="https://github.com/sindresorhus.png?size=40" class="repo-avatar" alt="sindresorhus">
+                    <div class="repo-meta">
+                        <span class="repo-owner">sindresorhus</span>
+                        <span class="repo-name">awesome</span>
+                    </div>
+                    <span class="repo-slot-badge">Slot open</span>
+                </div>
+                <p class="repo-desc">😎 Awesome lists about all kinds of interesting topics — the original curated list.</p>
+                <div class="repo-stats">
+                    <span class="repo-lang"><span class="lang-dot" style="background:#555"></span>—</span>
+                    <span class="repo-stars"><i data-lucide="star" class="icon-xs"></i> 320k</span>
+                </div>
+            </div>
+
+            <!-- Repo 5 -->
+            <div class="repo-card glass">
+                <div class="repo-card-header">
+                    <img src="https://github.com/tiangolo.png?size=40" class="repo-avatar" alt="tiangolo">
+                    <div class="repo-meta">
+                        <span class="repo-owner">tiangolo</span>
+                        <span class="repo-name">fastapi</span>
+                    </div>
+                    <span class="repo-slot-badge">Slot open</span>
+                </div>
+                <p class="repo-desc">FastAPI framework, high performance, easy to learn, fast to code, ready for production.</p>
+                <div class="repo-stats">
+                    <span class="repo-lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+                    <span class="repo-stars"><i data-lucide="star" class="icon-xs"></i> 76.1k</span>
+                </div>
+            </div>
+
+            <!-- Repo 6 -->
+            <div class="repo-card glass">
+                <div class="repo-card-header">
+                    <img src="https://github.com/axios.png?size=40" class="repo-avatar" alt="axios">
+                    <div class="repo-meta">
+                        <span class="repo-owner">axios</span>
+                        <span class="repo-name">axios</span>
+                    </div>
+                    <span class="repo-slot-badge">Slot open</span>
+                </div>
+                <p class="repo-desc">Promise based HTTP client for the browser and node.js — used by millions.</p>
+                <div class="repo-stats">
+                    <span class="repo-lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
+                    <span class="repo-stars"><i data-lucide="star" class="icon-xs"></i> 105k</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="repo-grid-footer">+ thousands more repos joining the network · <a href="#" onclick="focusWaitlist(); return false;">List your repo →</a></p>
+    </section>
+
+
+    <!-- Trust & Security -->
+    <section id="publishers" class="features"
+        style="background: rgba(15, 23, 42, 0.4); padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="section-header">
+            <h2>Built on <span class="gradient-text">Zero Trust Architecture</span></h2>
+            <p>We know your source code is sacred. We designed SponsorGit to be completely hands-off.</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card glass">
+                <div class="feature-icon"><i data-lucide="lock"></i></div>
+                <h3>Principle of Least Privilege</h3>
+                <p>We use modern GitHub Apps. No <code>Contents: Read</code> or Write access is ever requested. We only
+                    ask for Public Metadata (Stars, Language) and your payout email.</p>
+            </div>
+            <div class="feature-card glass">
+                <div class="feature-icon"><i data-lucide="edit-3"></i></div>
+                <h3>Manual Insert Only</h3>
+                <p>Our servers cannot edit your repository. You manually commit the image tag yourself. Your code
+                    remains uncompromised and fully under your control.</p>
+            </div>
+            <div class="feature-card glass">
+                <div class="feature-icon"><i data-lucide="search"></i></div>
+                <h3>External Verification</h3>
+                <p>To verify if the banner is still up, we simply scrape your public GitHub README just like any
+                    anonymous guest user would. No backdoor required.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="how-it-works-content">
+            <h2>Start earning in <span class="gradient-text">60 seconds</span></h2>
+            <ol class="steps">
+                <li>
+                    <div class="step-number">01</div>
+                    <div class="step-text">
+                        <h4>Register & List Your Repo</h4>
+                        <p>Sign up, link your GitHub repo, and set your preferences — topics, language, and payout method.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">02</div>
+                    <div class="step-text">
+                        <h4>Advertiser Books a Slot</h4>
+                        <p>Advertisers browse repos, upload their banner, and submit a booking. Funds are locked in their wallet — you get notified instantly.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">03</div>
+                    <div class="step-text">
+                        <h4>You Accept — Banner Goes Live</h4>
+                        <p>Review the banner and accept or deny within 48h. Accept = paste one Markdown line into your README and start earning your flat weekly fee.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="code-window glass">
+            <div class="window-header">
+                <div class="dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="filename">README.md</div>
+            </div>
+            <div class="code-content">
+                <pre><code><span class="syntax-heading"># My Awesome Project</span>
+
+A blazing fast, lean toolkit for modern developers.
+
+<span class="syntax-html">&lt;div align="center"&gt;</span>
+  <span class="syntax-comment">&lt;!-- SposorGit Native Integration --&gt;</span>
+  <span class="syntax-link">[![Sponsored by Vercel]</span><span class="syntax-url">(https://api.sponsorgit.com/v1/badge/my-repo)</span><span class="syntax-link">]</span><span class="syntax-url">(https://sponsorgit.com/click/my-repo)</span>
+<span class="syntax-html">&lt;/div&gt;</span>
+
+<span class="syntax-heading">## Installation</span>
+
+<span class="syntax-cli">npm install my-awesome-project</span></code></pre>
+            </div>
+            <div class="demo-render">
+                <div class="demo-label">Rendered Output on GitHub</div>
+                <div class="demo-banner">
+                    <div class="sponsor-tag">♥️ Sponsored</div>
+                    <div class="sponsor-logo"><i data-lucide="triangle"></i> Vercel</div>
+                    <div class="sponsor-text">Develop. Preview. Ship.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="section-header">
+            <h2>Simple, <span class="gradient-text">transparent</span> pricing</h2>
+            <p>No CPM. No CPC. No tracking. Just a flat weekly fee.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card glass">
+                <div class="pricing-badge">For Advertisers</div>
+                <div class="pricing-amount">
+                    <span class="price">$19</span>
+                    <span class="period">/week per repo slot</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i data-lucide="check" class="icon-check"></i> Your banner on a curated repo README</li>
+                    <li><i data-lucide="check" class="icon-check"></i> Reach thousands of developers organically</li>
+                    <li><i data-lucide="check" class="icon-check"></i> Choose repos by topic & language</li>
+                    <li><i data-lucide="check" class="icon-check"></i> Cancel anytime, no contracts</li>
+                </ul>
+                <button class="btn btn-primary" onclick="focusWaitlist()">Start Advertising</button>
+            </div>
+
+            <div class="pricing-card glass pricing-highlight">
+                <div class="pricing-badge badge-accent">For Maintainers</div>
+                <div class="pricing-amount">
+                    <span class="price">85%</span>
+                    <span class="period">revenue share</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i data-lucide="check" class="icon-check"></i> Keep 85% of every dollar earned</li>
+                    <li><i data-lucide="check" class="icon-check"></i> We only take 15% to keep the lights on</li>
+                    <li><i data-lucide="check" class="icon-check"></i> Payouts via Payoneer or USDT (international)</li>
+                    <li><i data-lucide="check" class="icon-check"></i> Payouts via Sepay (Vietnam)</li>
+                    <li><i data-lucide="check" class="icon-check"></i> Full control — remove ads anytime</li>
+                </ul>
+                <button class="btn btn-primary" onclick="focusWaitlist()">Register Your Repo</button>
+            </div>
+        </div>
+
+        <p class="pricing-note">Beta users get the first 2 months free. No credit card required.</p>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i data-lucide="github"></i> SponsorGit
+            </div>
+            <p>© 2026 SponsorGit. Built for builders.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
